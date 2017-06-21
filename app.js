@@ -13,23 +13,24 @@ const todoList = [
   {"listItem": "Learn how to connect to PostgreSQL from Node"},
   {"listItem": "Learn how to use Sequelize"}
 ];
-
+const data = require("./data");
 const app = express();
 
 app.engine('mustache', mustacheExpress());
 app.set('views', './views')
 app.set('view engine', 'mustache')
 
-app.use(express.static('./public'));
+app.use(express.static('./public'));  //so it will use the css file I created
 
 //Listening on root
 app.get('/', function (req, res) {
-  res.send('check out localhost:3000/todo');
+  res.send('check out localhost:3000/todo'); //if user doesn't know about todo this will direct them
 });
 
 app.get('/todo/', function (req, res) {
   // TODO write your code here
   res.render('todo', {todoList})  //'todo' is the to.mustache file (bastardized html)
+  // {todoList} is a reference to the todoList const defined on line 4
   // console.log(todoList);
 })
 
