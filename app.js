@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 app.get('/todo/', function (req, res) {
   // TODO write your code here
   res.render('todo', {todoList})  //'todo' is the to.mustache file (bastardized html)
-  // {todoList} is a reference to the todoList const defined on line 4
+  // {todoList} is a reference to the todoList constant defined on line 4
   // console.log(todoList);
 })
 
